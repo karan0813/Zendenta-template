@@ -3,7 +3,6 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import Menubar from './Menubar';
 
 const Header = () => {
     return (
@@ -18,7 +17,7 @@ const Header = () => {
                 <div className="items-center flex justify-center space-x-2 ">
                     <div className="border border-black rounded-2xl flex items-center justify-start w-40  px-3 py-1">
                         <SearchOutlinedIcon fontSize='small' />
-                        <input type="text" placeholder='search' className="w-fit bg-transparent text-black" />
+                        <input type="text" placeholder='search' className=" bg-transparent outline-none w-20 text-black" />
                     </div>
                     <div className="flex space-x-3 justify-center items-center ">
                         <div className="bg-blue-700 rounded-full p-1 ">

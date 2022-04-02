@@ -6,10 +6,10 @@ import {
     Route,
 
 } from "react-router-dom";
-import UappointMent from './UappointMent';
-import Papoointment from './Papoointment';
+import UappointMent from './UpcomingAppointMent';
+import Papoointment from './PastApointment';
 import { Link } from 'react-router-dom';
-import Mappointment from './Mappointment';
+import Mappointment from './MedicalRecored';
 
 const AppointMent = () => {
     const [active1, setactive1] = useState(true)
@@ -45,7 +45,7 @@ const AppointMent = () => {
                     <div className={`p-3 rounded-lg ${active2 && "bg-white text-blue-700"}  text-center text-sm font-bold`}
                         onClick={() => { setactive2(true); setactive1(false); setactive3(false) }}>Post Appointment</div>
                     <div className={`p-3 rounded-lg ${active3 && "bg-white text-blue-700"}  text-center text-sm font-bold`}
-                        onClick={() => { setactive3(true); setactive1(false); setactive2(false) }}>Medical Appointment</div>
+                        onClick={() => { setactive3(true); setactive1(false); setactive2(false) }}>Medical Recored</div>
 
                 </div>
                 <div className="flex justify-between items-center px-4  py-4 bg-[#F2F5FA]">

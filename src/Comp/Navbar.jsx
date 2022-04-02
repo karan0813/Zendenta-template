@@ -27,14 +27,14 @@ const Navbar = () => {
     return (
         <>
             {!open ?
-                <div className="w-60  py-4  bg-gray-200 navheight ease-in duration-500  rounded-l-lg static z-10">
+                <div className="w-60  py-4 bg-white navheight ease-in duration-500  rounded-l-lg static z-10">
                     <div div className="flex justify-evenly items-center" >
                         <img className="object-contain h-10 w-10" src="https://www.pngfind.com/pngs/m/65-651964_hospital-png-transparent-png.png" alt="..." />
                         <div>
                             <h1 className="text-gray-800 font-bold text-xl">Zendenta</h1>
-                            <p className="text-sm text-gray-600 font-semibold">Lorem ipsum dolor </p>
+                            <p className="text-xs text-gray-600 font-semibold">Lorem ipsum dolor </p>
                         </div>
-                        <svg onClick={() => (setopen(true))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg onClick={() => (setopen(true))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
                         </svg>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
                             <CalendarMonthIcon fontSize='small' color='action' />
                             <h1 className="capitalize text-xs font-extrabold text-gray-700">calendar</h1>
                         </div>
-                        <div className="flex justify-start space-x-4 items-center   text-black py-4 px-5 cursor-pointer hover:bg-blue-600">
+                        <div className="flex justify-start space-x-4 items-center  bg-blue-600  text-black py-4 px-5 cursor-pointer hover:bg-blue-600">
                             <PersonIcon fontSize='small' color='action' />
                             <h1 className="capitalize text-xs font-extrabold text-gray-700">Patient list</h1>
                         </div>
@@ -66,23 +66,31 @@ const Navbar = () => {
                         </div>
 
                     </div>
-                    <div className=" relative -bottom-36 ">
+                    <div className={`relative ${!toggle ? "-bottom-36" : ""} `}>
                         <div className="flex justify-start space-x-4 items-center  text-black py-3 px-5 cursor-pointer hover:bg-blue-600 ">
                             <PrivacyTipIcon fontSize='small' color='action' />
                             <h1 className="capitalize text-sm font-semibold text-gray-400">help ?</h1>
                         </div>
                         <div className="border-b border-gray-400 w-full"></div>
 
-                        <div className="p-3 flex justify-center items-center w-64 space-x-5">
+                        <div className="p-3 flex justify-start items-center w-64 space-x-2">
                             <Avatar alt="Remy Sharp" src="https://media.istockphoto.com/photos/indian-male-doctor-picture-id177373093?k=20&m=177373093&s=612x612&w=0&h=-PQwmaJszuQyxLQYuWL4VL731lr_dnhrttc4AOcB3-k=" />
-                            {toggle && <div>
+                            <div>
                                 <h1 className="text-md font-semibold ">{doctor.name}</h1>
                                 <p className="text-sm text-gray-800 font-semibold">{doctor.specification}</p>
-                            </div>}
-                            {!toggle ? <svg onClick={() => (settoggle(true))} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                {toggle &&
+                                    <div className="flect flex-col ">
+                                        <p className="font-semibold text-xs"><span className="text-sm font-bold">Position</span>:Medical Oncologist</p>
+                                        <p className="font-semibold text-xs"><span className="text-sm font-bold">Board Certification</span>: Medical Oncology and Hematology</p>
+                                        <p className="font-semibold text-xs"><span className="text-sm font-bold">FelloShip</span>: Columbia University Medical Center</p>
+                                    </div>
+                                }
+                            </div>
+
+                            {!toggle ? <svg onClick={() => (settoggle(true))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg> :
-                                <svg onClick={() => (settoggle(false))} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <svg onClick={() => (settoggle(false))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 absolute right-5 top-14" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
                                 </svg>}
                         </div>
@@ -93,7 +101,7 @@ const Navbar = () => {
                     <div div className="flex justify-evenly items-center" >
                         <img className="object-contain h-10 w-10" src="https://www.pngfind.com/pngs/m/65-651964_hospital-png-transparent-png.png" alt="..." />
 
-                        <svg onClick={() => (setopen(false))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg onClick={() => (setopen(false))} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Avatar from '@mui/material/Avatar';
-import Notes from './Notes';
-import AppointMent from './AppointMent';
-import Document from './Document';
+
 
 
 const ProfileCard = () => {
@@ -25,7 +23,7 @@ const ProfileCard = () => {
             <div className="flex w-fit rounded-lg  space-x-2">
                 <div className="h-72 w-80 flex-col rounded-lg pt-10  flex  justify-start bg-white items-center p-5 space-y-2  ">
                     {/* profile */}
-                    <Avatar sx={{ width: 60, height: 60 }} alt="Remy Sharp" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <Avatar sx={{ width: 80, height: 80 }} alt="Remy Sharp" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" />
                     <h1 className="text-xl text-black font-bold">{patient.name}</h1>
                     <p className='font-semibold text-gray-400 text-sm'>xyz@gmail.com</p>
                     <div className="flex justify-center items-center space-x-4 ml-6 ">
